@@ -1,0 +1,72 @@
+public int sumNumbers(String str) {
+  
+  int numSum = 0;
+  boolean lastIntFlag = false;
+  StringBuilder numbersBuilder = new StringBuilder("");
+  
+  for (int i = 0; i<str.length(); i++){
+    if(Character.isDigit(str.charAt(i))){
+      numbersBuilder.append(str.charAt(i));
+    }
+    else if (numbersBuilder.length() > 0) {
+      numSum += Integer.parseInt(numbersBuilder.toString());
+      numbersBuilder.delete(0,numbersBuilder.length());
+    }
+  }
+  if (numbersBuilder.length()>0){
+    numSum += Integer.parseInt(numbersBuilder.toString());
+  }    
+
+    return numSum;
+
+}
+
+  /*
+  int sumNumbers = 0;
+  int strLen = str.length();
+  StringBuilder numSequence = new StringBuilder();
+  
+  
+  for (int i = 0; i < strLen-1; i++){
+    
+    // if digit and next is digit and builder is not empty, add next digit
+    if (Character.isDigit(str.charAt(i)) && Character.isDigit(str.charAt(i+1)) 
+        && !numSequence.toString().isEmpty()){
+      
+      numSequence.append(str.charAt(i+1));  // append the char at next index to build number string
+      
+    } // if digit and next is digit and builder is empty, add 2 digits
+    else if (Character.isDigit(str.charAt(i)) && Character.isDigit(str.charAt(i+1))){
+      
+      // append 2 chars to empty string builder
+      numSequence.append(str.charAt(i));
+      numSequence.append(str.charAt(i+1));
+      
+    }
+    else if (Character.isDigit(str.charAt(i)) && !Character.isDigit(str.charAt(i+1))){
+      if (!numSequence.toString().isEmpty()){
+        sumNumbers += Integer.parseInt(numSequence.toString());
+        numSequence.delete(0,numSequence.toString().length());
+      }
+      else sumNumbers += Integer.parseInt(Character.toString(str.charAt(i)));
+
+    }
+    
+  }
+  
+   //if (Character.isDigit(str.charAt(strLen-1))) {
+     // sumNumbers += Integer.parseInt(Character.toString(str.charAt(strLen-1)));
+    //}
+  
+  if (numSequence.toString().isEmpty()) return sumNumbers;
+  
+  //else return sumNumbers + Integer.parseInt(numSequence.toString());
+  else{
+      if  (Character.isDigit(str.charAt(strLen-1))){
+        sumNumbers += Integer.parseInt(Character.toString(str.charAt(strLen-1)));
+      } 
+      sumNumbers += Integer.parseInt(numSequence.toString());
+
+      return sumNumbers;
+  }
+  */

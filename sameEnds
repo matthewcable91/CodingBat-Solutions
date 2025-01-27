@@ -1,0 +1,47 @@
+public String sameEnds(String string) {
+  
+  int strLen = string.length();
+  int iterator = 0;
+  
+  String firstHalf = new String();
+  String secondHalf = new String();
+  String endString = new String();
+  
+  if (strLen%2 == 1) {
+    firstHalf = string.substring(0,strLen/2);
+    secondHalf = string.substring(strLen/2+1);
+  }
+  else {
+    firstHalf = string.substring(0,strLen/2);
+    secondHalf = string.substring(strLen/2);
+  } 
+  
+    if (firstHalf.equals(secondHalf)) return firstHalf;
+  
+  for (int i = 0; i<firstHalf.length(); i++){
+    endString = endString.concat(Character.toString(firstHalf.charAt(i)));
+    if ((firstHalf.startsWith(endString)) && (secondHalf.endsWith(endString))) {
+      return endString;
+    }
+    
+  }
+  
+  //while (firstHalf.equals(secondHalf) && i<strLen){
+    // split the string into 2 substrings of EQUAL LENGTH
+    // iterate through and compare starts with of starting
+    // and ends with of ending
+    // if the lenght of string is odd, exclude middle char
+    
+    
+    
+  //  i++;
+  //}
+        
+  return "";
+}
+    
+    
+    /* new approach: take string, divide in the middle and expand 
+      outward index by index, once they match, return that value */
+      
+      // old approach -- add indices until last index == first index

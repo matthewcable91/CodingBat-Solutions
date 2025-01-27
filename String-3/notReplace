@@ -1,0 +1,73 @@
+public String notReplace(String str) {
+
+  StringBuilder strBldr = new StringBuilder("");
+  
+  int strLen = str.length();
+  int buildLen = str.length();
+  
+  for (int i = 0; i<strLen; i++){
+    
+    // check for "is" string
+    if ((str.charAt(i) == 'i' && str.charAt(i+1) == 's') && 
+    
+    (!((i>0 && Character.isLetter(str.charAt(i-1))) ||
+      (i<strLen-2 && Character.isLetter(str.charAt(i+2))))))
+    
+    {
+    
+      strBldr.append("is not");
+      i++;
+      
+    }
+    
+    else strBldr.append(str.charAt(i)); 
+  }
+
+  return strBldr.toString();
+
+}
+  
+
+
+/*
+
+  //to build the return string
+  StringBuilder rtnBldr = new StringBuilder("");
+  
+  //convert the string into a list of words
+  List<String> strList = Arrays.asList(str.split(" "));
+  
+  
+  strList.replaceIf(s -> " is ", " is not ");
+  
+  for (String s: strList){
+    rtnBldr.append(s);
+  }
+  
+  return rtnBldr.toString();
+  */
+  
+  /*
+  
+  //to build the return string
+  StringBuilder rtnBldr = new StringBuilder("");
+  
+  //String regex = "[-, ]";
+  //convert the string into a list of words
+  List<String> strList = Arrays.asList(str.split(" "));
+  
+  
+  for (String s: strList){
+    if(s.equals("is")){
+      rtnBldr.append("is not");
+    }
+    else if(s.contains("-") && s.contains("is"){
+      List<String> strList2 = Arrays.asList(s.split("-");
+    }
+    else rtnBldr.append(s);
+    
+    rtnBldr.append(" ");
+  }
+  rtnBldr.deleteCharAt(rtnBldr.length()-1);
+  return rtnBldr.toString();
+  */

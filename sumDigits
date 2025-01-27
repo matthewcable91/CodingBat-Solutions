@@ -1,0 +1,10 @@
+public int sumDigits(String str) {
+ int digitCount = 0;
+ for (int i = 0; i < str.length(); i++){
+   char charAtIdx = str.charAt(i);
+   if (Character.isDigit(charAtIdx)) {
+    digitCount+= Integer.parseInt(Character.toString(charAtIdx));
+   }
+ }
+ return digitCount;
+}

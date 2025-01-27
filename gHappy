@@ -1,0 +1,29 @@
+//import java.util.regex.Matcher;
+//import java.util.regex.Pattern;
+
+
+public boolean gHappy(String str) {
+  
+  if (str.length()==0) return true;
+  if ((str.length()<2) && (str.contains("g"))) return false;
+  
+  for (int i = 0; i<str.length(); i++){
+  if (str.charAt(i) == 'g'){
+    //if g is found at the start of the string
+    if (i == 0){
+      if (str.charAt(i+1) != 'g') return false;
+    }
+    // if g is found at the end of the string, 
+    else if (i==str.length()-1){
+      if (str.charAt(i-1) != 'g') return false;
+    }else {
+      if (str.charAt(i-1)!='g' && (str.charAt(i+1)!='g')) return false;
+  } 
+}
+    
+  }
+  //Pattern pattern = Pattern.compile("[^g]g[^g]", Pattern.CASE_INSENSITIVE);
+  //Matcher matcher = pattern.matcher(str);
+  //return !(matcher.find());
+  return true;
+}

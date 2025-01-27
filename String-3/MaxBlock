@@ -1,0 +1,22 @@
+public int maxBlock(String str) {
+  
+  
+  int maxBlockLen = 1;
+  int curBlockLen = 1;
+  int strLen = str.length();
+  
+  if (str.isEmpty()) return 0;
+
+  for (int i = 0; i < strLen-1; i++){
+    
+    if(str.charAt(i) == str.charAt(i+1)){
+      curBlockLen++;
+      maxBlockLen = (curBlockLen > maxBlockLen) ? curBlockLen : maxBlockLen;
+    }
+    else {
+      curBlockLen = 1;
+    }
+  }
+  return maxBlockLen;
+}
+

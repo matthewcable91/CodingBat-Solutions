@@ -1,0 +1,10 @@
+public String withoutString(String base, String remove) {
+  String rtnString = "";
+  //String[] strArr
+  
+  String[] strArr = base.split("(?i)" + remove);
+  for (String s : strArr){
+    rtnString += s;
+  }
+  return rtnString;
+}

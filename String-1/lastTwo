@@ -1,0 +1,13 @@
+public String lastTwo(String str) {
+  int len = str.length();
+  if (len < 2){
+    return str;
+  }
+  else{
+    char[] charArr = str.toCharArray();
+    char chBuff = charArr[len-1];
+    charArr[len-1] = charArr[len-2];
+    charArr[len-2] = chBuff;
+    return new String(charArr);
+  }
+}

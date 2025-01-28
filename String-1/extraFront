@@ -1,0 +1,8 @@
+public String extraFront(String str) {
+  String rtnString = new String();
+  if (str.length() == 0) rtnString = "";
+  else if (str.length() == 1) rtnString += str.charAt(0);
+  else rtnString = str.substring(0,2);
+  
+  return rtnString + rtnString + rtnString;
+}

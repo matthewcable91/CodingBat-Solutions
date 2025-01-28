@@ -1,0 +1,12 @@
+public String withoutX2(String str) {
+  StringBuilder strBd = new StringBuilder(str);
+  
+  if (strBd.length()>1 && str.charAt(1) == 'x'){
+    strBd.deleteCharAt(1);
+  } if (strBd.length()>0 && str.charAt(0) == 'x'){
+    strBd.deleteCharAt(0);
+  }
+  
+  return strBd.toString();
+  
+}

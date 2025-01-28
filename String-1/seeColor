@@ -1,0 +1,15 @@
+public String seeColor(String str) {
+  int len = str.length();
+  if (len > 3){
+    if (str.indexOf("blue") == 0){
+      return "blue";
+    } else if (str.indexOf("red") == 0) {
+      return "red";
+    }
+  } else if (len > 2){
+    if (str.indexOf("red") == 0){
+      return "red";
+    }
+  } 
+  return "";
+}

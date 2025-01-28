@@ -1,0 +1,12 @@
+public String withoutX(String str) {
+  
+  int endIdx = str.length() - 1;
+  
+  StringBuilder strBd = new StringBuilder(str);
+  
+  if (strBd.length() > 0 && str.charAt(endIdx) == 'x') strBd.deleteCharAt(endIdx);
+  
+  if (strBd.length() > 0 && str.charAt(0) == 'x') strBd.deleteCharAt(0);
+  
+  return strBd.toString();
+}

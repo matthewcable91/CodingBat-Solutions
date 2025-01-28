@@ -1,0 +1,9 @@
+public String deFront(String str) {    
+  StringBuilder strBld = new StringBuilder();
+  if (str.charAt(0) == 'a') strBld.append("a");
+  if (str.charAt(1) == 'b') strBld.append("b");
+  for (int i = 2; i < str.length(); i++){
+    strBld.append(Character.toString(str.charAt(i)));
+  }
+  return strBld.toString();
+}

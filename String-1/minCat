@@ -1,0 +1,12 @@
+public String minCat(String a, String b) {
+  int lenA = a.length();
+  int lenB = b.length();
+  int lenDiff = Math.abs(lenA - lenB);
+  if (lenDiff == 0){
+    return a + b;
+  }
+  else if (lenA > lenB){
+    return a.substring(lenDiff) + b;
+  }
+  else return a + b.substring(lenDiff);
+}
